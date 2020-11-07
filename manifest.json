@@ -1,0 +1,21 @@
+{
+  "name": "Planning Center Live Kiosk",
+  "version": "0.0.1",
+  "description": "Enable Planning center live to be shown on a kiosk tv with one click",
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "cookies",
+    "https://services.planningcenteronline.com/"
+  ],
+  "page_action": {
+    "default_title": "Planning Center Kiosk"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "manifest_version": 2
+}
