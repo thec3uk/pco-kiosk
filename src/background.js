@@ -18,10 +18,10 @@ var isKiosk = false;
 function loadKiosk(tabWindowId) {
   // chrome.windows.update(tabWindowId, { state: "fullscreen" });
   // chrome.tabs.insertCSS({
-  //   file: "styles.css",
+  //   file: "src/styles.css",
   // });
   chrome.tabs.executeScript({
-    file: "content.js",
+    file: "src/content.js",
   });
   // chrome.cookies.set({
   //   url: "services.planningcenteronline.com",
@@ -35,10 +35,10 @@ function resetKiosk(tabWindowId) {
   // chrome.windows.update(tabWindowId, { state: "normal" });
   // the CSS doesn't work right now, but will in future!
   // chrome.tabs.removeCSS({
-  //   file: "styles.css",
+  //   file: "src/styles.css",
   // });
   chrome.tabs.executeScript({
-    file: "contentReset.js",
+    file: "src/contentReset.js",
   });
   // chrome.cookies.set({
   //   url: "services.planningcenteronline.com",
