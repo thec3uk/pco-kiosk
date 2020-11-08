@@ -16,7 +16,7 @@ chrome.runtime.onInstalled.addListener(function () {
 var isKiosk = false;
 
 function loadKiosk(tabWindowId) {
-  // chrome.windows.update(tabWindowId, { state: "fullscreen" });
+  chrome.windows.update(tabWindowId, { state: "fullscreen" });
   // chrome.tabs.insertCSS({
   //   file: "src/styles.css",
   // });
@@ -32,7 +32,7 @@ function loadKiosk(tabWindowId) {
 }
 
 function resetKiosk(tabWindowId) {
-  // chrome.windows.update(tabWindowId, { state: "normal" });
+  chrome.windows.update(tabWindowId, { state: "normal" });
   // the CSS doesn't work right now, but will in future!
   // chrome.tabs.removeCSS({
   //   file: "src/styles.css",
@@ -57,7 +57,6 @@ function onClick(tab) {
 }
 
 function onBounds(window) {
-  console.log(window);
   if (window.state !== "fullscreen") {
     resetKiosk(window.id);
   }
