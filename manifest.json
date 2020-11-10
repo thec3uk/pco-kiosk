@@ -5,6 +5,7 @@
   "permissions": [
     "activeTab",
     "declarativeContent",
+    "storage",
     "cookies",
     "https://services.planningcenteronline.com/"
   ],

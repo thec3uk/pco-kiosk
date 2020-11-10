@@ -1,5 +1,3 @@
-console.log("RESET");
-
 var wrapperElements = document.querySelectorAll(
   ".LiveApp-composition--overview-wrapper > div"
 );
