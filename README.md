@@ -10,5 +10,5 @@ In short it does the following when clicked:
 
 ## Todo
 
-- Shift to second screen, if this is possible (test the current code first)
 - Open planning center (given a service id or link)
+  - this is either a popover on the button click

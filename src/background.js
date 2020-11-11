@@ -13,12 +13,18 @@ chrome.runtime.onInstalled.addListener(function () {
   });
 });
 
-var isKiosk = false;
-
 function loadKiosk(tab) {
+  let kioskUrl;
+  if (tab.url.startsWith("https://services.planningcenteronline.com/plans/")) {
+    kioskUrl = tab.url.replace("/plans/", "/live/");
+  } else if (
+    tab.url.startsWith("https://services.planningcenteronline.com/live/")
+  ) {
+    kioskUrl = tab.url;
+  }
   chrome.windows.create(
     {
-      url: tab.url,
+      url: kioskUrl,
       focused: true,
       type: "popup",
     },
@@ -63,9 +69,6 @@ function resetKiosk() {
   // chrome.tabs.removeCSS({
   //   file: "src/styles.css",
   // });
-  chrome.tabs.executeScript({
-    file: "src/contentReset.js",
-  });
   chrome.cookies.set({
     url: "https://services.planningcenteronline.com",
     name: "composition",
